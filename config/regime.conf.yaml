@@ -1,0 +1,8 @@
+#Jetty Server Details
+jettyPort: 8080
+
+# ES cluster name
+esClusterName: elasticsearch
+esIp: 127.0.0.1
+esPort: 9300
+
