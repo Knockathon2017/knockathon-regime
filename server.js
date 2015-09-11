@@ -23,6 +23,9 @@ app.get('/login', function (request, response) {
 app.get('/signup', function (request, response) {
     response.render('signup');
 });
+app.get('/home', function (request, response) {
+    response.render('sparkhome');
+});
 
 app.listen(app.get('port'), function () {
     console.log('Node app is running on port', app.get('port'));

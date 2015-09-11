@@ -1,67 +1,10 @@
 <html>
   <head>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <style>
-      ul.nav-right-elements{
-        text-decoration: none;
-      }
-      ul.nav-right-elements > li{
-        text-decoration: none;
-        float: left;
-        padding: 10pt 10pt;
-      }
-      .navbar{
-        background: linear-gradient(to top, rgba(255,255,255,0.1), rgba(255, 255, 255, 1.0) 30%);
-        border: none;
-        height: 60pt;
-      }
-      
-      .inherit-color{
-        color: inherit;
-      }
-      a{
-        text-decoration: none;
-      }
-      a:hover{
-        text-decoration: none;
-      }
-      .tag{
-        border:1pt solid #bbb;
-        border-radius: 3pt;
-        padding: 5pt 10pt;
-        color: #bbb;
-        transition: all .2s;
-      }
-      .tag:hover{
-        border-color: #00AEBB;
-        background: #00AEBB;
-        color: #fff;
-      }
-      
-    </style>
+     <% include ../partialview/header.ejs %>
   </head>
   <body>
-  
-  <!-- Navigation Bar -->
-   <nav class="navbar navbar-default navbar-fixed-top" style="padding-top:5pt;">
-        <div class="container">
-         <div class="pull-left">
-           <img src="http://design.ubuntu.com/wp-content/uploads/ubuntu-logo32.png" alt="" height="50">
-         </div>
-         <ul class="nav-right-elements pull-right">
-           <li>
-             <a href="#">Log In</a>
-           </li>
-           <li>
-             <a href="#">Sign Up</a>
-           </li>
-         </ul>
-        </div>
-      </nav>
-      
-      <!-- Main content Area -->
-      
-      <section style="background: #fff;; margin-bottom: 100pt">
+  <% include ../partialview/logoutnav.ejs %>
+        <section style="background: #fff;; margin-bottom: 100pt">
         <div class="container" style="padding-top:200px; color: #4b4b4b;">
           <div class="col-md-12">
              <h4><a href="#" class="inherit-color"><span class="spark">Prateek Mahajan</span></a>'s Spark is <span class="status" style="color: #27ae60">Open</span></h4>

@@ -4,17 +4,18 @@
     <% include ../partialview/header.ejs %>
     <script>
         var sparkApp = angular.module('spark', []);
-        sparkApp.controller('sparkController', function ($scope, $http,$routeParams) { 
+        sparkApp.controller('sparkController', function ($scope, $http,$location) { 
             $scope.login = function (username,password) {
                 if(username !== undefined && password !== undefined){
-                    var data = {
-                        "j_username":username,
-                        "j_password":password
-                    }
-                    $http.post("http://192.168.0.142:8080/exzeo-spark/login", data).success(function(data, status) {
-                       //$location.path('/signup');
-                         window.location.href="https://www.google.co.in/?user="+username+"pass="+password;
-                    });
+                    //var data = {
+                    //    "j_username":username,
+                    //    "j_password":password
+                    //}
+                    //$http.post("http://192.168.0.142:8080/exzeo-spark/login", data).success(function(data, status) {
+                    //   //$location.path('/signup');
+                    //     window.location.href="https://www.google.co.in/?user="+username+"pass="+password;
+                    //});
+                    window.location.href = '/home';
                 }
             };
         });
@@ -22,7 +23,7 @@
 </head>
 
 <body ng-controller="sparkController">
-<% include ../partialview/nav.ejs %>
+<% include ../partialview/loginnav.ejs %>
   <section style="height:100vh; background: url('http://www.hdwallpapersllc.com/wp-content/uploads/2015/07/digital-colorful-abstract-HD-wallpaper.jpg'); background-size:cover; ">
      
       <div class="container" style="background: #eee; padding-top:20vh;">
