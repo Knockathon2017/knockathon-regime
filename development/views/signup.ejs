@@ -1,42 +1,9 @@
 <html>
   <head>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <style>
-      ul.nav-right-elements{
-        text-decoration: none;
-      }
-      ul.nav-right-elements > li{
-        text-decoration: none;
-        float: left;
-        padding: 10pt 10pt;
-      }
-      .navbar{
-        background: linear-gradient(to top, rgba(255,255,255,0.1), rgba(255, 255, 255, 1.0) 45%);
-        border: none;
-        height: 60pt;
-      }
-    </style>
+     <% include ../partialview/header.ejs %>
   </head>
   <body>
-  
-  <!-- Navigation Bar -->
-   <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-         <div class="pull-left">
-           <img src="http://design.ubuntu.com/wp-content/uploads/ubuntu-logo32.png" alt="" height="50">
-         </div>
-         <ul class="nav-right-elements pull-right">
-           <li>
-             <a href="/login">Log In</a>
-           </li>
-           <li>
-             <a href="#">Sign Up</a>
-           </li>
-         </ul>
-        </div>
-      </nav>
-      
-      <!-- Main content Area -->
+  <% include ../partialview/nav.ejs %>
     <section style="height:100vh; background: url('http://www.hdwallpapersllc.com/wp-content/uploads/2015/07/digital-colorful-abstract-HD-wallpaper.jpg'); background-size:cover; ">
      
       <div class="container" style="background: #eee; padding-top:20vh;">

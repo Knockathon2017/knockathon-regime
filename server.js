@@ -13,11 +13,11 @@ app.set('views', __dirname + '/development/views');
 app.set('view engine', 'ejs');
 
 app.get('/', function (request, response) {
-    response.render('index');
+    response.render('login');
 });
 
 app.get('/login', function (request, response) {
-    response.render('index');
+    response.render('login');
 });
 
 app.get('/signup', function (request, response) {
