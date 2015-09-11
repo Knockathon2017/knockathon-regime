@@ -1,0 +1,13 @@
+{
+  "name": "knockathon-regime",
+  "version": "0.0.1",
+  "description": "Knockathon entry for knockathon-regime team",
+  "dependencies": {
+    "ejs": "2.3.3",
+    "express": "4.13.3",
+    "handlebars": "^4.0.2"
+  },
+  "engines": {
+    "node": "0.12.7"
+  }
+}
