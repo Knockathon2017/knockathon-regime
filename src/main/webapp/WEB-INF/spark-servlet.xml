@@ -22,28 +22,24 @@
 		
 	<mvc:annotation-driven/>
 	<tx:annotation-driven/>
-    <context:component-scan base-package="com.logtrips.webapp.controller, com.logtrips.webapp.serviceImpl, com.logtrips.webapp.daoImpl,
-    	com.logtrips.webapp.validator" />
-    
-	
-	<!-- To serve static content -->	
-	<mvc:resources location="/resources/" mapping="/resources/**"/>
-
-	<!-- DataSource properties file -->
+    <context:component-scan base-package="com.exzeo.spark.controller, com.exzeo.spark.serviceImpl, com.exzeo.spark.daoImpl,
+    	com.exzeo.spark.validator" />
+    	
+    <!-- DataSource properties file -->
 	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
  		<property name="location" value="classpath:dataSource.properties"/>
 	</bean>
 	
 	<!-- Hibernate transaction manager -->
 	<bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
-	  	<property name="dataSource" ref="logtripsDataSource" />
+	  	<property name="dataSource" ref="sparkDataSource" />
 	  	<property name="sessionFactory" ref="sessionFactory" />
     </bean>
     
     <!-- Session Factory -->
      <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
-        <property name="dataSource" ref="logtripsDataSource" />
-        <property name="packagesToScan" value="com.logtrips.webapp.model"/>
+        <property name="dataSource" ref="sparkDataSource" />
+        <property name="packagesToScan" value="com.exzeo.spark.model"/>
         <property name="hibernateProperties">
             <props>
                 <prop key="hibernate.dialect">${jdbc.dialect}</prop>
@@ -53,7 +49,7 @@
     </bean>
 
 	<!-- Datasource bean -->
-	<bean id="logtripsDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	<bean id="sparkDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="${jdbc.driverClassName}"/>
 		<property name="url" value="${jdbc.url}"/>
 		<property name="username" value="${jdbc.username}"/>
@@ -62,28 +58,8 @@
 	
 	<!-- Liquibase bean to create db schema -->
 	<bean id="liquibase" class="liquibase.integration.spring.SpringLiquibase">
-		<property name="dataSource" ref="logtripsDataSource"/>
+		<property name="dataSource" ref="sparkDataSource"/>
 		<property name="changeLog" value="classpath:db-changelog.xml"/>	
 	</bean>
 	
-	<!-- Configure tiles -->
-	<bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
-		<property name="definitions">
-			<list>
-				<value>/WEB-INF/views.xml</value>
-			</list>		
-		</property>	
-	</bean>
-	
-	<!-- Apache tiles view resolver -->
-	<bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
-		<property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView" />
-	</bean>
-	
-	<!-- Message Resolver -->
-	<bean id="messageSource"
-		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
-			<property name="basename" value="classpath:messages"/>
-			<property name="defaultEncoding" value="UTF-8"/>
-	</bean>
 </beans>
