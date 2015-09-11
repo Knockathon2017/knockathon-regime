@@ -21,7 +21,8 @@ public class UserDAOImpl extends BaseDAOImpl<User, Long> implements UserDAO {
 
 	public User findUserByUsername(String username) {
 		Criteria crit = sessionFactory.getCurrentSession().createCriteria(User.class);
-		crit.add(Restrictions.eq("contactNumber", Long.valueOf(username)));
-		return (User) crit.uniqueResult();
+		crit.add(Restrictions.eq("contactNumber", username));
+		User user = (User) crit.uniqueResult();
+		return user;
 	}
 }

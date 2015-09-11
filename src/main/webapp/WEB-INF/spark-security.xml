@@ -9,9 +9,11 @@
 					
 				
 	<http use-expressions="true" entry-point-ref="restAuthenticationEntryPoint">
-		<intercept-url pattern="/exzeo-spark/**" />
+		<intercept-url pattern="/login" access="permitAll" />
+		<intercept-url pattern="/signup" access="permitAll" />
+		<intercept-url pattern="/*" />
 		<sec:form-login authentication-success-handler-ref="authSuccessHandler"
-		authentication-failure-handler-ref="authFailureHandler"/>
+		authentication-failure-handler-ref="authFailureHandler" username-parameter="j_username" password-parameter="j_password"/>
 		<logout />	
 		<sec:csrf disabled="true"/>
 	</http>

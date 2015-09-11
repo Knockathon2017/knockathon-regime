@@ -7,14 +7,18 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+@Entity
+@Table(name="users")
 public class User implements UserDetails, Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -28,7 +32,7 @@ public class User implements UserDetails, Serializable {
 	private String role;
 	
 	@Column(name="contact_number")
-	private Long contactNumber;
+	private String contactNumber;
 	
 	@Column(name="email")
 	private String email;
@@ -39,10 +43,10 @@ public class User implements UserDetails, Serializable {
 	@Column(name="gender")
 	private String gender;
 	
-	@Column(name="dateOfBirth")
+	@Column(name="date_of_birth")
 	private Date dateOfBirth;
 	
-	@Column(name="address1")
+	@Column(name="address_1")
 	private String address1;
 	
 	@Column(name="city")
@@ -62,11 +66,11 @@ public class User implements UserDetails, Serializable {
 		this.id = id;
 	}
 
-	public Long getContactNumber() {
+	public String getContactNumber() {
 		return contactNumber;
 	}
 
-	public void setContactNumber(Long contactNumber) {
+	public void setContactNumber(String contactNumber) {
 		this.contactNumber = contactNumber;
 	}
 

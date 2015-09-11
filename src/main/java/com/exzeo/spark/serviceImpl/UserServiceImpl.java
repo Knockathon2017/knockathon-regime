@@ -17,7 +17,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 	@Autowired
 	private UserDAO userDAO;
 	
-
+	
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		return userDAO.findUserByUsername(username);
 	}	

@@ -14,7 +14,7 @@
     	<createTable tableName="users">
     		<column name="id" type="int(11)"/>
     		<column name="role" type="varchar(15)" />
-    		<column name="contact_number" type="int(10)" />
+    		<column name="contact_number" type="varchar(10)" />
     		<column name="email" type="varchar(25)" />
     		<column name="password" type="varchar(15)" />
     		<column name="gender" type="varchar(6)" />
@@ -25,7 +25,7 @@
     		<column name="zip" type="int(6)" />
     	</createTable>
 		<addPrimaryKey columnNames="id" tableName="users"/>
-		<addNotNullConstraint columnName="contact_number" columnDataType="int(10)" tableName="users"/>
+		<addNotNullConstraint columnName="contact_number" columnDataType="varchar(10)" tableName="users"/>
 		<addNotNullConstraint columnName="password" columnDataType="varchar(15)" tableName="users"/>
 		<addNotNullConstraint columnName="gender" columnDataType="varchar(6)" tableName="users"/>
 		<addNotNullConstraint columnName="date_of_birth" columnDataType="datetime" tableName="users"/>
