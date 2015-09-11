@@ -33,16 +33,19 @@
         sparkApp.controller('sparkController', function ($scope, $http,$routeParams) { 
             $scope.login = function (username,password) {
                 if(username !== undefined && password !== undefined){
-                     $location.path('/signup')
+                     //$location.path('/signup')
+                    var data = {
+                        "j_username":username,
+                        "j_password":password
+                    }
+                    $http.post("http://192.168.0.142:8080/exzeo-spark/login", data).success(function(data, status) {
+                       //$location.path('/signup');
+                         window.location.href="https://www.google.co.in/?user="+username+"pass="+password;
+                    });
                     // window.location.href="https://www.google.co.in/?user="+username+"pass="+password;
                 }
             };
         });
-        sparkApp.config([
-            '$routeProvider', function($routeProvider,sparkController) {
-                $routeProvider.when('/signup', {templateUrl: 'signup.html', controller: 'sparkController'});
-                $routeProvider.otherwise({redirectTo: '/'}); 
-            }]);
     </script>
 </head>
 <body ng-controller="sparkController">
@@ -58,7 +61,7 @@
              <a href="#">Log In</a>
            </li>
            <li>
-             <a href="#">Sign Up</a>
+             <a href="/signup">Sign Up</a>
            </li>
          </ul>
         </div>
@@ -73,7 +76,7 @@
           <input type="text" ng-model = "username"  placeholder="Enter Phone Number" class="form-control">
           <input type="password" ng-model = "password"  placeholder="Password" class="form-control">
           <input type="button" ng-click ="login(username,password)" value="Log In Now" />
-        <span>Don't have an account ? <br><a href="#">Sign Up Now!</a></span>
+        <span>Don't have an account ? <br><a href="/signup">Sign Up Now!</a></span>
        
        </div>
         
