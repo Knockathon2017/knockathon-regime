@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.8"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.8
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.8.xsd">
+    
+    <changeSet author="vishal" id="1">
+    	<preConditions onFail="MARK_RAN">
+    		<not>
+    			<tableExists tableName="users"/>
+    		</not>
+    	</preConditions>
+    	<createTable tableName="users">
+    		<column name="id" type="int(11)"/>
+    		<column name="role" type="varchar(15)" />
+    		<column name="contact_number" type="int(10)" />
+    		<column name="email" type="varchar(25)" />
+    		<column name="password" type="varchar(15)" />
+    		<column name="gender" type="varchar(6)" />
+    		<column name="date_of_birth" type="datetime" />
+    		<column name="address_1" type="varchar(200)" />
+    		<column name="city" type="varchar(25)" />
+    		<column name="state" type="varchar(25)" />
+    		<column name="zip" type="int(6)" />
+    	</createTable>
+		<addPrimaryKey columnNames="id" tableName="users"/>
+		<addNotNullConstraint columnName="contact_number" columnDataType="int(10)" tableName="users"/>
+		<addNotNullConstraint columnName="password" columnDataType="varchar(15)" tableName="users"/>
+		<addNotNullConstraint columnName="gender" columnDataType="varchar(6)" tableName="users"/>
+		<addNotNullConstraint columnName="date_of_birth" columnDataType="datetime" tableName="users"/>
+		<addNotNullConstraint columnName="address_1" columnDataType="varchar(200)" tableName="users"/>
+		<addNotNullConstraint columnName="city" columnDataType="varchar(25)" tableName="users"/>
+		<addNotNullConstraint columnName="state" columnDataType="varchar(25)" tableName="users"/>
+		<addNotNullConstraint columnName="zip" columnDataType="int(6)" tableName="users"/>
+		<addUniqueConstraint columnNames="contact_number" tableName="users"/>     
+    	<addUniqueConstraint columnNames="email" tableName="users"/>
+    	<addAutoIncrement columnName="id" tableName="users" columnDataType="int(11)"/>    
+    </changeSet>
+    
+    
+</databaseChangeLog>

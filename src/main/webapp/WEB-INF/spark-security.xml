@@ -1,0 +1,36 @@
+<beans:beans xmlns:beans="http://www.springframework.org/schema/beans"
+			xmlns="http://www.springframework.org/schema/security"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xmlns:sec="http://www.springframework.org/schema/security"
+			xsi:schemaLocation="http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+				http://www.springframework.org/schema/security
+				http://www.springframework.org/schema/security/spring-security-4.0.xsd" >
+					
+				
+	<http use-expressions="true" entry-point-ref="restAuthenticationEntryPoint">
+		<intercept-url pattern="/exzeo-spark/**" />
+		<sec:form-login authentication-success-handler-ref="authSuccessHandler"
+		authentication-failure-handler-ref="authFailureHandler"/>
+		<logout />	
+		<sec:csrf disabled="true"/>
+	</http>
+	
+	<beans:bean id="restAuthenticationEntryPoint" 
+		class="com.exzeo.spark.rest.security.RestAuthenticationEntryPoint"/>
+	
+	<beans:bean id="authSuccessHandler" 
+		class="com.exzeo.spark.rest.security.AuthenticationSuccessHandler"/>
+		
+	<beans:bean id="authFailureHandler" 
+		class="org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler"/>						
+				
+
+	
+	<authentication-manager>
+	  <authentication-provider user-service-ref="userService" />
+	</authentication-manager>
+	
+	<sec:global-method-security secured-annotations="enabled"/>
+
+</beans:beans>
