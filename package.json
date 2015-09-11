@@ -2,10 +2,14 @@
   "name": "knockathon-regime",
   "version": "0.0.1",
   "description": "Knockathon entry for knockathon-regime team",
+  "main": "server.js",
   "dependencies": {
     "ejs": "2.3.3",
     "express": "4.13.3",
-    "handlebars": "^4.0.2"
+    "handlebars": "^4.0.2",
+    "morgan"     : "~1.2.2",
+    "body-parser": "~1.5.2",
+    "method-override": "~2.1.2"
   },
   "engines": {
     "node": "0.12.7"
