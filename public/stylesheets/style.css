@@ -1,0 +1,33 @@
+ul.nav-right-elements{
+  text-decoration: none;
+}
+ul.nav-right-elements > li{
+  text-decoration: none;
+  float: left;
+  padding: 10pt 10pt;
+}
+.navbar{
+  padding-top: 5pt;
+  background: linear-gradient(to top, rgba(255,255,255,0.1), rgba(255, 255, 255, 1.0) 25%);
+  border: none;
+  height: 60pt;
+}
+a{
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: none;
+}
+.inherit-color{
+  color: inherit;
+}
+.tag{
+  margin: 0 3pt;
+  padding: 7pt 10pt;
+  border-radius: 2pt;
+  border: 1pt solid #bbb;
+  color: #bbb;
+}
+.tag:nth-child(1){
+  margin-left: 0;
+}

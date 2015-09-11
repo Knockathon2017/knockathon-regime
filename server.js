@@ -8,6 +8,8 @@ app.set('port', 9000);
 
 app.use(express.static(__dirname + '/public'));
 
+
+
 // views is directory for all template files
 app.set('views', __dirname + '/development/views');
 app.set('view engine', 'ejs');
@@ -23,8 +25,11 @@ app.get('/login', function (request, response) {
 app.get('/signup', function (request, response) {
     response.render('signup');
 });
-app.get('/home', function (request, response) {
+app.get('/spark', function (request, response) {
     response.render('sparkhome');
+});
+app.get('/sparks', function (request, response) {
+    response.render('sparks');
 });
 
 app.listen(app.get('port'), function () {
