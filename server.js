@@ -31,6 +31,9 @@ app.get('/spark', function (request, response) {
 app.get('/sparks', function (request, response) {
     response.render('sparks');
 });
+app.get('/spark-create', function (request, response) {
+    response.render('spark-create');
+});
 
 app.listen(app.get('port'), function () {
     console.log('Node app is running on port', app.get('port'));

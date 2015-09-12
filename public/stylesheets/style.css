@@ -106,7 +106,7 @@ textarea.form-control:focus{
   padding-right: 0;
 }
 .grid-item{
-  margin-bottom: 50px;
+  margin-bottom: 50px;;
   transition: all .3s;
 }
 .grid-item:hover div.tile{
@@ -122,4 +122,16 @@ textarea.form-control:focus{
   background: #fffff7;
   box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
   margin-bottom:10pt;
+}
+.Open{
+  background: #2ecc71; 
+}
+.Invested{
+  background: #34495e; 
+}
+.Open > div > span.status{
+  color: #2ecc71 !important; 
+}
+.Invested > div > span.status{
+  color: #34495e !important; 
 }
