@@ -3,7 +3,6 @@ package com.exzeo.spark.model;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -16,9 +15,6 @@ import javax.persistence.Table;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.fasterxml.jackson.databind.ser.std.DateSerializer;
 
 @Entity
 @Table(name="users")
@@ -104,13 +100,12 @@ public class User implements UserDetails, Serializable {
 		this.gender = gender;
 	}
 
-	@JsonSerialize(using=DateSerializer.class)
-	public Date getDateOfBirth() {
-		return dateOfBirth;
+	public Long getAge() {
+		return age;
 	}
 
-	public void setDateOfBirth(Date dateOfBirth) {
-		this.dateOfBirth = dateOfBirth;
+	public void setAge(Long age) {
+		this.age = age;
 	}
 
 	public String getAddress1() {
