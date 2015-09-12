@@ -15,10 +15,11 @@
     		<column name="id" type="int(11)"/>
     		<column name="role" type="varchar(15)" />
     		<column name="contact_number" type="varchar(10)" />
+    		<column name="name" type="varchar(45)" />
     		<column name="email" type="varchar(25)" />
     		<column name="password" type="varchar(15)" />
     		<column name="gender" type="varchar(6)" />
-    		<column name="date_of_birth" type="datetime" />
+    		<column name="age" type="int(11)" />
     		<column name="address_1" type="varchar(200)" />
     		<column name="city" type="varchar(25)" />
     		<column name="state" type="varchar(25)" />
@@ -26,9 +27,10 @@
     	</createTable>
 		<addPrimaryKey columnNames="id" tableName="users"/>
 		<addNotNullConstraint columnName="contact_number" columnDataType="varchar(10)" tableName="users"/>
+		<addNotNullConstraint columnName="name" columnDataType="varchar(45)" tableName="users"/>
 		<addNotNullConstraint columnName="password" columnDataType="varchar(15)" tableName="users"/>
 		<addNotNullConstraint columnName="gender" columnDataType="varchar(6)" tableName="users"/>
-		<addNotNullConstraint columnName="date_of_birth" columnDataType="datetime" tableName="users"/>
+		<addNotNullConstraint columnName="age" columnDataType="int(11)" tableName="users"/>
 		<addNotNullConstraint columnName="address_1" columnDataType="varchar(200)" tableName="users"/>
 		<addNotNullConstraint columnName="city" columnDataType="varchar(25)" tableName="users"/>
 		<addNotNullConstraint columnName="state" columnDataType="varchar(25)" tableName="users"/>

@@ -37,6 +37,9 @@ public class User implements UserDetails, Serializable {
 	@Column(name="contact_number")
 	private String contactNumber;
 	
+	@Column(name="name")
+	private String name;
+	
 	@Column(name="email")
 	private String email;
 	
@@ -46,8 +49,8 @@ public class User implements UserDetails, Serializable {
 	@Column(name="gender")
 	private String gender;
 	
-	@Column(name="date_of_birth")
-	private Date dateOfBirth;
+	@Column(name="age")
+	private Long age;
 	
 	@Column(name="address_1")
 	private String address1;
