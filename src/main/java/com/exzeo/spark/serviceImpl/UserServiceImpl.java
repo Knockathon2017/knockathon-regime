@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.exzeo.spark.dao.UserDAO;
+import com.exzeo.spark.model.User;
 import com.exzeo.spark.service.UserService;
 
 @Service("userService")
@@ -15,11 +16,15 @@ import com.exzeo.spark.service.UserService;
 public class UserServiceImpl implements UserService, UserDetailsService {
 	
 	@Autowired
-	private UserDAO userDAO;
-	
+	private UserDAO userDAO;	
 	
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		return userDAO.findUserByUsername(username);
+	}
+	
+	@Transactional(readOnly=false)
+	public void saveUser(User user) {
+		userDAO.saveOrUpdate(user);		
 	}	
 	
 }

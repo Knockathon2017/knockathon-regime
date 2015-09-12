@@ -17,6 +17,9 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.DateSerializer;
+
 @Entity
 @Table(name="users")
 public class User implements UserDetails, Serializable {
@@ -98,6 +101,7 @@ public class User implements UserDetails, Serializable {
 		this.gender = gender;
 	}
 
+	@JsonSerialize(using=DateSerializer.class)
 	public Date getDateOfBirth() {
 		return dateOfBirth;
 	}

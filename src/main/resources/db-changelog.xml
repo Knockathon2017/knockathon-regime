@@ -38,5 +38,86 @@
     	<addAutoIncrement columnName="id" tableName="users" columnDataType="int(11)"/>    
     </changeSet>
     
+    <changeSet author="vishal" id="2">
+    	<preConditions onFail="MARK_RAN">
+    		<not>
+    			<tableExists tableName="ideas"/>
+    		</not>    	
+    	</preConditions>
+    	<createTable tableName="ideas">
+    		<column name="id" type="int(11)" />
+    		<column name="user_id" type="int(11)" />
+    		<column name="status" type="varchar(10)" />
+    		<column name="title" type="varchar(50)" />
+    		<column name="creationDate" type="datetime" />
+    		<column name="description" type="varchar(1000)" />    	
+    	</createTable>
+    	<addPrimaryKey columnNames="id" tableName="ideas"/>
+    	<addNotNullConstraint columnName="user_id" columnDataType="int(11)" tableName="ideas"/>
+    	<addNotNullConstraint columnName="status" columnDataType="varchar(10)" tableName="ideas"/>
+    	<addNotNullConstraint columnName="creationDate" columnDataType="datetime" tableName="ideas"/>
+    	<addNotNullConstraint columnName="description" columnDataType="varchar(1000)" tableName="ideas"/>
+    	<addAutoIncrement columnName="id" tableName="users" columnDataType="int(11)"/>    	    
+    </changeSet>
+    
+    <changeSet author="vishal" id="3">
+    	<preConditions onFail="MARK_RAN">
+    		<not>
+    			<tableExists tableName="invested"/>
+    		</not>
+    	</preConditions>
+    	<createTable tableName="invested">
+    		<column name="id" type="int(11)" />
+    		<column name="user_id" type="int(11)" />
+    		<column name="idea_id" type="int(11)" />    	
+    	</createTable>
+    	<addPrimaryKey columnNames="id" tableName="invested"/>
+    	<addAutoIncrement columnName="id" tableName="invested" columnDataType="int(11)"/>    
+    </changeSet>
+    
+    <changeSet author="vishal" id="4">
+    	<preConditions onFail="MARK_RAN">
+    		<not>
+    			<tableExists tableName="interested"/>
+    		</not>
+    	</preConditions>
+    	<createTable tableName="interested">
+    		<column name="id" type="int(11)" />
+    		<column name="user_id" type="int(11)" />
+    		<column name="idea_id" type="int(11)" />    	
+    	</createTable>
+    	<addPrimaryKey columnNames="id" tableName="interested"/>
+    	<addAutoIncrement columnName="id" tableName="interested" columnDataType="int(11)"/>    
+    </changeSet>
+    
+    <changeSet author="vishal" id="5">
+    	<preConditions onFail="MARK_RAN">
+    		<not>
+    			<tableExists tableName="idea_tags"/>
+    		</not>
+    	</preConditions>
+    	<createTable tableName="idea_tags">
+    		<column name="id" type="int(11)" />
+    		<column name="idea_id" type="int(11)" />
+    		<column name="tag_id" type="int(11)" />   	
+    	</createTable>
+    	<addPrimaryKey columnNames="id" tableName="idea_tags"/>
+    	<addAutoIncrement columnName="id" tableName="idea_tags" columnDataType="int(11)"/>    
+    </changeSet>
+    
+    <changeSet author="vishal" id="6">
+    	<preConditions onFail="MARK_RAN">
+    		<not>
+    			<tableExists tableName="tags"/>
+    		</not>
+    	</preConditions>
+    	<createTable tableName="tags">
+    		<column name="id" type="int(11)" />
+    		<column name="tag_name" type="varchar(25)" />  	
+    	</createTable>
+    	<addPrimaryKey columnNames="id" tableName="tags"/>
+    	<addUniqueConstraint columnNames="tag_name" tableName="tags"/>
+    	<addAutoIncrement columnName="id" tableName="tags" columnDataType="int(11)"/>    
+    </changeSet>
     
 </databaseChangeLog>
