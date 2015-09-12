@@ -1,0 +1,125 @@
+ul.nav-right-elements{
+  text-decoration: none;
+  list-style: none;
+}
+ul.nav-right-elements > li{
+  text-decoration: none;
+  float: left;
+  padding: 10pt 10pt;
+}
+.navbar{
+  padding-top: 5pt;
+  background: linear-gradient(to top, rgba(255,255,255,0.1), rgba(255, 255, 255, 1.0) 25%);
+  border: none;
+  height: 60pt;
+}
+a{
+  text-decoration: none;
+  color: #f1c40f;
+  transition: all .2s;
+}
+a:hover{
+  text-decoration: none;
+  color: #f39c12;
+}
+.inherit-color{
+  color: inherit;
+}
+.tag{
+  margin: 0 3pt;
+  padding: 7pt 10pt;
+  border-radius: 2pt;
+  border: 1pt solid #bbb;
+  color: #bbb;
+}
+.tag:nth-child(1){
+  margin-left: 0;
+}
+h1, h2, h3, h4, h5, h6{
+  font-family: 'museo', Times New Roman, serif;
+}
+h4{
+  line-height: 24px;
+}
+h3{
+line-height: 30px;
+}
+body{
+  font-family: 'proxima-nova', helvetica, arial, sans-serif;
+}
+input.form-control{
+  border: 1pt solid #eee;
+  border-radius: 2pt;
+  box-shadow: none;
+  margin: 3pt 0;
+}
+input.form-control:active{
+  border: 1pt solid #f1c40f;
+  box-shadow: 0 0 3pt rgba(0,0,0,0.5);
+}
+input.form-control:focus{
+  border: 1pt solid #f1c40f;
+  box-shadow: 0 0 3pt rgba(0,0,0,0.3);
+}
+textarea.form-control{
+  border: 1pt solid #eee;
+  border-radius: 2pt;
+  box-shadow: none;
+  margin: 3pt 0;
+}
+textarea.form-control:active{
+  border: 1pt solid #f1c40f;
+  box-shadow: 0 0 3pt rgba(0,0,0,0.5);
+}
+textarea.form-control:focus{
+  border: 1pt solid #f1c40f;
+  box-shadow: 0 0 3pt rgba(0,0,0,0.3);
+}
+.btn{
+  margin-top: 10pt;
+  border-radius: 100px;
+  padding-left:15pt;
+  padding-right: 15pt;
+  font-size: 11pt;
+  font-family: 'museo', 'proxima-nova', helvetica, arial, sans-serif;
+}
+.btn-primary{
+  color: #fff;
+  border: 0;
+  background: #000;
+  transition: all .2s;
+}
+.btn-primary:hover{
+  background: #f39c12;
+}
+.btn-default{
+  color: #fff;
+  border: 0;
+  background: #f1c40f;
+  transition: all .2s;
+}
+.btn-default:hover{
+  background: #f39c12;
+}
+.btn-no-button{
+  padding-left:0;
+  padding-right: 0;
+}
+.grid-item{
+  margin-bottom: 50px;
+  transition: all .3s;
+}
+.grid-item:hover div.tile{
+  background: #f1c40f !important;
+}
+.grid-item:hover div.tile > div{
+  box-shadow: 0 0 5pt rgba(0,0,0,0.9);
+}
+.discussion-notes{
+  border: 1pt solid #fffff7;
+  padding: 10pt 30px;
+  border-radius: 2pt;
+  background: #fffff7;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+  margin-bottom:10pt;
+}
