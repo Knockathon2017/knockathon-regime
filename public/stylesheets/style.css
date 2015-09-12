@@ -41,6 +41,9 @@ h1, h2, h3, h4, h5, h6{
 h4{
   line-height: 24px;
 }
+h3{
+line-height: 30px;
+}
 body{
   font-family: 'proxima-nova', helvetica, arial, sans-serif;
 }
@@ -97,4 +100,18 @@ textarea.form-control:focus{
 }
 .btn-default:hover{
   background: #f39c12;
+}
+.btn-no-button{
+  padding-left:0;
+  padding-right: 0;
+}
+.grid-item{
+  margin-bottom: 50px;
+  transition: all .3s;
+}
+.grid-item:hover div.tile{
+  background: #f1c40f !important;
+}
+.grid-item:hover div.tile > div{
+  box-shadow: 0 0 5pt rgba(0,0,0,0.9);
 }
