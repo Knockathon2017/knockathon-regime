@@ -1,5 +1,6 @@
 ul.nav-right-elements{
   text-decoration: none;
+  list-style: none;
 }
 ul.nav-right-elements > li{
   text-decoration: none;
@@ -14,9 +15,12 @@ ul.nav-right-elements > li{
 }
 a{
   text-decoration: none;
+  color: #f1c40f;
+  transition: all .2s;
 }
 a:hover{
   text-decoration: none;
+  color: #f39c12;
 }
 .inherit-color{
   color: inherit;
@@ -30,4 +34,67 @@ a:hover{
 }
 .tag:nth-child(1){
   margin-left: 0;
+}
+h1, h2, h3, h4, h5, h6{
+  font-family: 'museo', Times New Roman, serif;
+}
+h4{
+  line-height: 24px;
+}
+body{
+  font-family: 'proxima-nova', helvetica, arial, sans-serif;
+}
+input.form-control{
+  border: 1pt solid #eee;
+  border-radius: 2pt;
+  box-shadow: none;
+  margin: 3pt 0;
+}
+input.form-control:active{
+  border: 1pt solid #f1c40f;
+  box-shadow: 0 0 3pt rgba(0,0,0,0.5);
+}
+input.form-control:focus{
+  border: 1pt solid #f1c40f;
+  box-shadow: 0 0 3pt rgba(0,0,0,0.3);
+}
+textarea.form-control{
+  border: 1pt solid #eee;
+  border-radius: 2pt;
+  box-shadow: none;
+  margin: 3pt 0;
+}
+textarea.form-control:active{
+  border: 1pt solid #f1c40f;
+  box-shadow: 0 0 3pt rgba(0,0,0,0.5);
+}
+textarea.form-control:focus{
+  border: 1pt solid #f1c40f;
+  box-shadow: 0 0 3pt rgba(0,0,0,0.3);
+}
+.btn{
+  margin-top: 10pt;
+  border-radius: 100px;
+  padding-left:15pt;
+  padding-right: 15pt;
+  font-size: 11pt;
+  font-family: 'museo', 'proxima-nova', helvetica, arial, sans-serif;
+}
+.btn-primary{
+  color: #fff;
+  border: 0;
+  background: #000;
+  transition: all .2s;
+}
+.btn-primary:hover{
+  background: #f39c12;
+}
+.btn-default{
+  color: #fff;
+  border: 0;
+  background: #f1c40f;
+  transition: all .2s;
+}
+.btn-default:hover{
+  background: #f39c12;
 }
