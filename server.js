@@ -25,10 +25,10 @@ app.get('/login', function (request, response) {
 app.get('/signup', function (request, response) {
     response.render('signup');
 });
-app.get('/spark', function (request, response) {
+app.get('sparkhome.htm', function (request, response) {
     response.render('sparkhome');
 });
-app.get('/sparks', function (request, response) {
+app.get('sparks.htm', function (request, response) {
     response.render('sparks');
 });
 

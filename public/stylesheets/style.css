@@ -66,6 +66,7 @@ textarea.form-control{
   border-radius: 2pt;
   box-shadow: none;
   margin: 3pt 0;
+  resize: none;
 }
 textarea.form-control:active{
   border: 1pt solid #f1c40f;
@@ -74,6 +75,10 @@ textarea.form-control:active{
 textarea.form-control:focus{
   border: 1pt solid #f1c40f;
   box-shadow: 0 0 3pt rgba(0,0,0,0.3);
+}
+select{
+  border: 1pt solid #eee !important;
+  box-shadow: none !important;
 }
 .btn{
   margin-top: 10pt;
