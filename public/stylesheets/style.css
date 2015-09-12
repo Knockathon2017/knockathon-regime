@@ -115,3 +115,11 @@ textarea.form-control:focus{
 .grid-item:hover div.tile > div{
   box-shadow: 0 0 5pt rgba(0,0,0,0.9);
 }
+.discussion-notes{
+  border: 1pt solid #fffff7;
+  padding: 10pt 30px;
+  border-radius: 2pt;
+  background: #fffff7;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+  margin-bottom:10pt;
+}
