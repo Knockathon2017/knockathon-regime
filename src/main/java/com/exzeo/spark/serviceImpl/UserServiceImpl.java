@@ -24,7 +24,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 	
 	@Transactional(readOnly=false)
 	public void saveUser(User user) {
-		userDAO.saveOrUpdate(user);		
+		userDAO.saveOrUpdate(user);
 	}	
 	
 }
