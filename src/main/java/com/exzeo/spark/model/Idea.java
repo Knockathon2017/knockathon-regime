@@ -2,14 +2,9 @@ package com.exzeo.spark.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name="ideas")
@@ -36,6 +31,9 @@ public class Idea implements Serializable {
 	
 	@Column(name="description")
 	private String description;
+
+	@OneToMany
+	private Set<Interested> getInteresteds;
 
 	public Long getId() {
 		return id;

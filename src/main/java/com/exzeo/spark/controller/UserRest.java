@@ -16,9 +16,9 @@ import com.exzeo.spark.model.User;
 import com.exzeo.spark.service.UserService;
 
 @RestController
-public class BaseController {
+public class UserRest {
 
-    private static final Logger LOGGER = Logger.getLogger(BaseController.class);
+    private static final Logger LOGGER = Logger.getLogger(UserRest.class);
 
     @Autowired
     UserService userService;
