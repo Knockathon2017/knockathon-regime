@@ -1,36 +1,9 @@
 <html>
   <head>
      <% include ../partialview/header.ejs %>
+     <script src="js/categories.js"></script>
      <script>
-      var spark=angular.module('spark', [])
-      spark.controller('categoriesController', function($scope) {
-    $scope.categories = [
-      {
-          cat_id: 1,
-          cat_name: 'Agriculture'
-      },
-      {
-          cat_id: 2,
-          cat_name: 'Energy'
-      },
-      {
-          cat_id: 3,
-          cat_name: 'Health'
-      },
-      {
-          cat_id: 4,
-          cat_name: 'Jobs'
-      },
-      {
-          cat_id: 5,
-          cat_name: 'IT'
-      },
-      {
-          cat_id: 6,
-          cat_name: 'Health'
-      }
-    ];
-});
+
     </script>
   </head>
   <body ng-app="spark">
@@ -52,16 +25,16 @@
             <input type="radio" name="user-type">&nbsp;&nbsp;an Investor
           </div>
           
-          <input type="number" name="phno" id="phno" placeholder="Enter Phone Number" class="form-control" required>
+          <input type="number" name="phno" id="phno" placeholder="Enter Phone Number" class="form-control"  required>
           <div class="col-md-8" style="padding: 0">
-            <input type="text" name="uname" id="uname" placeholder="Full Name" class="form-control" required>
+            <input type="text" name="uname" id="uname" placeholder="Full Name" class="form-control"  required>
           </div>
           <div class="col-md-3 col-md-offset-1" style="padding: 0">
-            <input type="text" name="age" id="age" placeholder="Age" class="form-control" required>
+            <input type="text" name="age" id="age" placeholder="Age" class="form-control"  required>
           </div>
           <input type="text" name="email" id="email" placeholder="Enter Email" class="form-control">
-          <input type="password" name="passkey" id="passkey" placeholder="Enter Password" class="form-control" required>
-          <input type="password" name="cpasskey" id="cpasskey" placeholder="Confirm Password" class="form-control" required>
+          <input type="password" name="passkey" id="passkey" placeholder="Enter Password" class="form-control"  required>
+          <input type="password" name="cpasskey" id="cpasskey" placeholder="Confirm Password" class="form-control"  required>
           
           <div class="col-md-12 text-left">
             <h5 style="margin-bottom: -10pt; margin-top: 10pt;">Gender</h5><br>
@@ -74,14 +47,14 @@
           </div>
           
            <textarea name="addr" id="addr" class="form-control" cols="30" rows="2" placeholder="Enter Address Line" style="resize: none;"></textarea>
-           <div class="col-md-4" style="padding: 0" required>
-            <input type="text" name="zip" id="zip" placeholder="Enter ZIP" class="form-control" required>
+           <div class="col-md-4" style="padding: 0"  >
+            <input type="text" name="zip" id="zip" placeholder="Enter ZIP" class="form-control"  required>
           </div>
           <div class="col-md-7 col-md-offset-1" style="padding: 0">
-            <input type="text" name="city" id="city" placeholder="Enter City" class="form-control" required>
+            <input type="text" name="city" id="city" placeholder="Enter City" class="form-control"  required>
           </div>
           
-          <input type="state" name="state" id="state" placeholder="Enter State" class="form-control" required>
+          <input type="state" name="state" id="state" placeholder="Enter State" class="form-control"  required>
           <br>
           <div class="col-md-12 text-left">
             <span>Interested In</span><br>
@@ -90,7 +63,6 @@
           <div class="col-md-6 text-left" ng-repeat="category in categories">
             <input type="checkbox" name="{{ category.cat_name }}" checked>&nbsp; {{ category.cat_name }}  
           </div>
-          
           <button class="btn btn-primary" type="submit" style="margin-top:50px;">Sign Up</button>
         </form> 
         

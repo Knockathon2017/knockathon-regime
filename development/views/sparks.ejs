@@ -2,70 +2,7 @@
 
 <head>
   <% include ../partialview/header.ejs %>
-  <style>
-
-  </style>
-  <script>
-    var spark = angular.module('spark', [])
-    spark.controller('allSparks', function ($scope) {
-      $scope.sparks = [
-        {
-          title: 'Solar Enery Panels',
-          content: 'Solar panel refers to a panel designed to absorb the suns rays as a source of energy for generating electricity or heating.A PV module is a packaged, connected assembly of typically 6×10 solar cells. Solar PV panels constitute the solar array of a photovoltaic system that generates and supplies solar electricity in commercial and residential applications. Each module is rated by its DC output power under standard test conditions, and typically ranges from 100 to 365 watts. The efficiency of a module determines the area of a module given the same rated output – an 8% efficient 230 watt module will have twice the area of a 16% efficient 230 watt module. There are a few solar panels available that are exceeding 19% efficiency. A single solar module can produce only a limited amount of power; most installations contain multiple modules. A photovoltaic system typically includes a panel or an array of solar modules, a solar inverter, and sometimes a battery and/or solar tracker and interconnection wiring.',
-          maker: 'Sunaina Singhal',
-          status: 'Open'
-        },
-        {
-          title: 'Green Revolution',
-          content: 'The Green Revolution refers to a series of research and development and technology transfer initiatives, occurring between the 1930s and the late 1960s (with prequels in the work of the agrarian genetist Nazareno Strampelli in the 1920s and 1930s), that increased agricultural production worldwide, particularly in the developing world, beginning most markedly in the late 1960s.[1] The initiatives, led by Norman Borlaug, the "Father of the Green Revolution," who won the Nobel Peace Prize in 1970, credited with saving over a billion people from starvation, involved the development of high-yielding varieties of cereal grains, expansion of irrigation infrastructure, modernization of management techniques, distribution of hybridized seeds, synthetic fertilizers, and pesticides to farmers.',
-          maker: 'Tanmay Saxena',
-          status: 'Invested'
-        },
-        {
-          title: 'Wifi Calling and Messging',
-          content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet quibusdam vero, vel quidem recusandae odit magnam adipisci ab repellendus maiores libero distinctio aliquid sunt tempore. Ex et aut repellat non?',
-          maker: 'Dhruv Singh Rana',
-          status: 'Open'
-        },
-        {
-          title: 'Solar Enery Panels',
-          content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet quibusdam vero, vel quidem recusandae odit magnam adipisci ab repellendus maiores libero distinctio aliquid sunt tempore. Ex et aut repellat non?',
-          maker: 'Akshay Sharma',
-          status: 'Open'
-        },
-        {
-          title: 'GreenCredits',
-          content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet quibusdam vero, vel quidem recusandae odit magnam adipisci ab repellendus maiores libero distinctio aliquid sunt tempore. Ex et aut repellat non?',
-          maker: 'Phoenix Forces',
-          status: 'Open'
-        },
-        {
-          title: 'R-Samadhaan',
-          content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet quibusdam vero, vel quidem recusandae odit magnam adipisci ab repellendus maiores libero distinctio aliquid sunt tempore. Ex et aut repellat non?',
-          maker: 'Script Kiddies',
-          status: 'Open'
-        },
-        {
-          title: 'HealthFirst',
-          content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet quibusdam vero, vel quidem recusandae odit magnam adipisci ab repellendus maiores libero distinctio aliquid sunt tempore. Ex et aut repellat non?',
-          maker: 'Tanmay Saxena',
-          status: 'Invested'
-        },
-        {
-          title: 'Rural Entrepreneurship Promotion',
-          content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet quibusdam vero, vel quidem recusandae odit magnam adipisci ab repellendus maiores libero distinctio aliquid sunt tempore. Ex et aut repellat non?',
-          maker: 'Tanmay Saxena',
-          status: 'Open'
-        },
-        {
-          title: 'Swachha Bharat Abhiyaan',
-          content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet quibusdam vero, vel quidem recusandae odit magnam adipisci ab repellendus maiores libero distinctio aliquid sunt tempore. Ex et aut repellat non?',
-          maker: 'Gov of India',
-          status: 'Invested'
-        }
-      ];
-    });
-  </script>
+  <script src="js/sparks.js"></script>
 </head>
 
 <body ng-app="spark">
@@ -85,18 +22,19 @@
 
     <section style="margin-bottom: 20pt;">
       <div class="container">
+        <input ng-model="query" class="form-control" placeholder="Find Sparks" style="margin-left: -15px;"><br><br><br>
        <div class="row grid" ng-controller="allSparks">
        
        <!-- User 'Likes' specific filtered data will be calculated and shown -->
        
        <!-- Single Post -->
-        <div class="col-md-4 grid-item" ng-repeat="spark in sparks"> 
+        <div class="col-md-4 grid-item" ng-repeat="spark in sparks | filter:query"> 
          <a href="/spark" class="inherit-color"> 
           <div class="row tile {{ spark.status }}" style="width: 100%; height: 3pt;">
             
             <div class="col-md-12" style="box-shadow: 0 0 2pt rgba(0,0,0,0.1); border: 1pt solid #eee; padding: 10pt 15px;">
               
-              <h4>{{ spark.title }}</h4>
+              <h4 style="height: 30pt">{{ spark.title }}</h4>
               <p style="height: 30pt; overflow: hidden; text-overflow: ellipsis;">{{ spark.content }}</p>
               <br>
               <span style="font-size: 10pt; color: #ccc;">{{ spark.maker }}</span>
@@ -113,14 +51,10 @@
         </div>
       </div>
     </section>
+    <% include ../partialview/footer.ejs %>
 
-
-    <section>
-
-
-    </section>
     
-<!-- TO DO - Implement Masonry -->
+<!-- 
 <script>
   $(document).ready(function(){
     $('.grid').masonry({
@@ -128,7 +62,7 @@
   itemSelector: '.grid-item',
 });
   });
-  </script>
+  </script>TO DO - Implement Masonry -->
 </body>
 
 </html>
